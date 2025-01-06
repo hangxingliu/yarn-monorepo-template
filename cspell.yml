@@ -1,0 +1,17 @@
+# https://cspell.org/
+language: en
+dictionaries:
+  - softwareTerms
+  - misc
+  - typescript
+allowCompoundWords: true
+ignorePaths:
+  - "**/node_modules/**"
+  - "packages/*/esm"
+  - "packages/*/cjs"
+ignoreRegExpList:
+  - /\/.+\//     # in RegExp
+words:
+  - tseslint
+  - swcrc
+  - hangxingliu

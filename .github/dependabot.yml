@@ -1,0 +1,17 @@
+# https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference#package-ecosystem-
+version: 2
+updates:
+  - directory: /
+    package-ecosystem: npm
+    commit-message:
+      prefix: deps # the git commit message will look like: "deps: ..."
+    schedule:
+      interval: weekly
+    # ignore:
+    #   - dependency-name: '@types/node'
+  - directory: /
+    package-ecosystem: github-actions
+    commit-message:
+      prefix: deps
+    schedule:
+      interval: weekly

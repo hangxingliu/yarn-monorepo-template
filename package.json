@@ -1,0 +1,36 @@
+{
+  "name": "@org/repo",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "yarn@4.6.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "husky",
+    "start": "./run-ts.mjs",
+    "build": "./scripts/swc-build-all.mjs",
+    "lint": "yarn workspaces foreach -Ap run lint && yarn lint:eslint",
+    "lint:eslint": "eslint",
+    "clean": "yarn workspaces foreach -Ap run clean",
+    "removehook": "git config --unset core.hooksPath",
+    "spellcheck": "cspell ."
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@eslint/js": "^9.17.0",
+    "@swc/core": "^1.10.4",
+    "@types/node": "^22.10.5",
+    "eslint": "^9.17.0",
+    "husky": "^9.1.7",
+    "swc-cli-mux": "^0.5.0",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.19.0"
+  }
+}
