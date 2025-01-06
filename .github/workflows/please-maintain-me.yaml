@@ -1,0 +1,27 @@
+name: please-maintain-me
+
+# https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads
+# https://docs.github.com/en/actions/learn-github-actions/events-that-trigger-workflows
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "42 0 1 * *" # once per month (at 1st 00:42)
+
+jobs:
+  check-maintenance:
+    runs-on: ubuntu-24.04
+    name: "Check whether this template is still maintaining"
+    if: ${{ github.event.repository.name == 'yarn-monorepo-template' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: "Check last commit time"
+        run: |
+          export LAST_COMMIT_AT="$(git log -1 --format="%at")"
+          node -e '
+            const now_ts = Math.floor(Date.now() / 1000);
+            const last_ts = parseInt(process.env.LAST_COMMIT_AT, 10);
+            const diff = now_ts - last_ts;
+            const ok = diff < 60 * 24 * 3600; // 60 days
+            console.error({ now_ts, last_ts, diff, ok });
+            process.exit(ok ? 0 : 1);
+          ';
