@@ -13,8 +13,8 @@
   ],
   "scripts": {
     "postinstall": "husky",
-    "start": "./run-ts.mjs",
-    "build": "./scripts/swc-build-all.mjs",
+    "start": "node ./run-ts.mjs",
+    "build": "node ./scripts/swc-build-all.mjs",
     "lint": "yarn workspaces foreach -Ap run lint && yarn lint:eslint",
     "lint:eslint": "eslint",
     "clean": "yarn workspaces foreach -Ap run clean",
