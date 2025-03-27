@@ -6,7 +6,7 @@ updates:
     commit-message:
       prefix: deps # the git commit message will look like: "deps: ..."
     schedule:
-      interval: weekly
+      interval: monthly
     # ignore:
     #   - dependency-name: '@types/node'
   - directory: /
@@ -14,4 +14,4 @@ updates:
     commit-message:
       prefix: deps
     schedule:
-      interval: weekly
+      interval: monthly

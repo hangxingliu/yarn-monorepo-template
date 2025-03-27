@@ -9,7 +9,7 @@ on:
 
 jobs:
   check-maintenance:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     name: "Check whether this template is still maintaining"
     if: ${{ github.event.repository.name == 'yarn-monorepo-template' }}
     steps:

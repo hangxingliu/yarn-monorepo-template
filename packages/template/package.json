@@ -12,7 +12,7 @@
     "lint": "tsc"
   },
   "devDependencies": {
-    "@types/node": "^22.13.10",
+    "@types/node": "^22.13.14",
     "rimraf": "^6.0.1",
     "swc-cli-mux": "^0.5.0",
     "typescript": "^5.8.2"
