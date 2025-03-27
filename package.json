@@ -13,9 +13,10 @@
   ],
   "scripts": {
     "postinstall": "husky",
-    "start": "node ./run-ts.mjs",
+    "start": "tsx",
     "build": "node ./scripts/swc-build-all.mjs",
     "lint": "yarn workspaces foreach -Ap run lint && yarn lint:eslint",
+    "test": "yarn workspaces foreach -Ap run test",
     "lint:eslint": "eslint",
     "clean": "yarn workspaces foreach -Ap run clean",
     "removehook": "git config --unset core.hooksPath",
@@ -30,6 +31,7 @@
     "eslint": "^9.23.0",
     "husky": "^9.1.7",
     "swc-cli-mux": "^0.5.0",
+    "tsx": "^4.19.3",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.28.0"
   }

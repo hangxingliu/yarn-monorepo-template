@@ -17,3 +17,5 @@ jobs:
         run: corepack enable && yarn install
       - name: Lint
         run: yarn lint
+      - name: Test
+        run: yarn test

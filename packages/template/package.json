@@ -9,12 +9,16 @@
     "start": "node --enable-source-maps esm/index.js",
     "build": "node ../../scripts/swc-build.mjs --esm",
     "clean": "rimraf cjs esm dist",
+    "test": "mocha",
     "lint": "tsc"
   },
   "devDependencies": {
+    "@types/mocha": "^10.0.10",
     "@types/node": "^22.13.14",
+    "mocha": "^11.2.0",
     "rimraf": "^6.0.1",
     "swc-cli-mux": "^0.5.0",
+    "tsx": "^4.19.3",
     "typescript": "^5.8.2"
   }
 }
