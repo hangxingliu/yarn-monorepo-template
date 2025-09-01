@@ -13,7 +13,7 @@ jobs:
     name: "Check whether this template is still maintaining"
     if: ${{ github.event.repository.name == 'yarn-monorepo-template' }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: "Check last commit time"
         run: |
           export LAST_COMMIT_AT="$(git log -1 --format="%at")"
